@@ -1,0 +1,16 @@
+{
+  "name": "csv-rss",
+  "version": "1.0.0",
+  "description": "Convert EXCEL/CSV to RSS",
+  "main": "index.js",
+  "scripts": {
+    "server": "npm run start --prefix backend",
+    "client": "npm run start --prefix frontend",
+    "start": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "author": "Walter Okumu",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.4.0"
+  }
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <rss version = "2.0">
+      <channel>
+        <title>KWFT Forex Rates</title>
+        <link>https://kwftbank.com</link>
+        <description>KWFT Forex Ticker</description>
+        <language>en-us</language>
+        <pubDate>Thu, 10 Feb 2022 09:22:33 GMT</pubDate>
+        <lastBuildDate>Thu, 10 Feb 2022 09:22:33 GMT</lastBuildDate>
+        <docs>https://kwftbank.com</docs>
+        <generator>CSV-RSS Generator 2.0</generator>
+        <managingEditor>info@rhodium.co.ke (Rhodium Digital Services)</managingEditor>
+        <webMaster>info@rhodium.co.ke (Rhodium Digital Services)</webMaster>
+        <item>
+        <title>KES / USHS</title>
+        <link>https://kwftbank.com</link>
+        <description>Buy: 30.9339, Sell: 31.0765, Mean: 31.0052</description>
+        <pubDate>Thu, 10 Feb 2022 09:22:33 GMT</pubDate>
+      </item>
+      <item>
+        <title>KES / TSHS</title>
+        <link>https://kwftbank.com</link>
+        <description>Buy: 20.2855, Sell: 20.4093, Mean: 20.3474</description>
+        <pubDate>Thu, 10 Feb 2022 09:22:33 GMT</pubDate>
+      </item>
+      <item>
+        <title>KES / RWF</title>
+        <link>https://kwftbank.com</link>
+        <description>Buy: 9.0465, Sell: 9.2489, Mean: 9.1477</description>
+        <pubDate>Thu, 10 Feb 2022 09:22:33 GMT</pubDate>
+      </item>
+      <item>
+        <title>KES / BIF</title>
+        <link>https://kwftbank.com</link>
+        <description>Buy: 17.5526, Sell: 17.617, Mean: 17.5848</description>
+        <pubDate>Thu, 10 Feb 2022 09:22:33 GMT</pubDate>
+      </item>
+      </channel>
+    </rss>
