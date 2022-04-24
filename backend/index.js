@@ -19,12 +19,12 @@ app.post('/api/generaterss', (req, res) => {
 
   const event = new Date()
 
-  for(let i = 0; i <= payload.length - 1; i++) {
+  for (let i = 0; i <= payload.length - 1; i++) {
     itemData = (itemData + `
       <item>
         <title>${payload[i].Currency}</title>
         <link>https://kwftbank.com</link>
-        <description>Buy: ${payload[i].Buy}, Sell: ${payload[i].Sell}, Mean: ${payload[i].Mean}</description>
+        <description>${payload[i].Currency} Buy: ${payload[i].Buy}, Sell: ${payload[i].Sell}, Mean: ${payload[i].Mean}</description>
         <pubDate>${event.toUTCString()}</pubDate>
       </item>
     `).trim()

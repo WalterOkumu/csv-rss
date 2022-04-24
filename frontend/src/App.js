@@ -51,37 +51,40 @@ function App() {
   // handle file upload
   const handleFileUpload = e => {
     const file = e.target.files[0];
-    const reader = new FileReader();
-    reader.onload = (evt) => {
-      /* Parse data */
-      const bstr = evt.target.result;
-      const wb = XLSX.read(bstr, { type: 'binary' });
-      /* Get first worksheet */
-      const wsname = wb.SheetNames[0];
-      const ws = wb.Sheets[wsname];
-      /* Convert array of arrays */
-      const data = XLSX.utils.sheet_to_csv(ws, { header: 1 });
-      processData(data);
-    };
-    reader.readAsBinaryString(file);
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (evt) => {
+        /* Parse data */
+        const bstr = evt.target.result;
+        const wb = XLSX.read(bstr, { type: 'binary' });
+        /* Get first worksheet */
+        const wsname = wb.SheetNames[0];
+        const ws = wb.Sheets[wsname];
+        /* Convert array of arrays */
+        const data = XLSX.utils.sheet_to_csv(ws, { header: 1 });
+        processData(data);
+      };
+      reader.readAsBinaryString(file);
+    }
   }
 
   const saveForex = async () => {
 
     const config = {
       headers: {
-          'Content-Type': 'application/json'
+        'Content-Type': 'application/json'
       }
     }
 
     const payload = JSON.stringify(data)
 
     return await axios
-    .post('http://localhost:8000/api/generaterss', payload, config)
-    .then(response => response.data)
-    .then(console.log('Data sent to server'))
-    .then(alert('RSS Feed has been created'))
-    .catch(error => console.log(error))
+      .post(`${process.env.REACT_APP_SERVER_ADDRESS}:8000/api/generaterss`, payload, config)
+      .then(response => response.data)
+      .then(console.log('Data sent to server'))
+      .then(alert('RSS Feed has been created'))
+      .catch(error => console.log(error))
   }
 
   return (
@@ -92,7 +95,7 @@ function App() {
         accept=".csv,.xlsx,.xls"
         onChange={handleFileUpload}
       />
-      <button onClick = {saveForex}>Save Forex</button>
+      <button onClick={saveForex}>Save Forex</button>
       <DataTable
         pagination
         highlightOnHover
